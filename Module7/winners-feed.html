@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auction Winners</title>
+    <link href="winners-feed.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Projector display: open this page on the second screen and press F for full screen.
+     Add ?names=1 to the address to show the winner's name as well as the paddle number. -->
+
+<header id="bar">
+    <span id="title">The Great Auction Site</span>
+    <span id="totals"></span>
+    <span id="link-lost" hidden>Connection lost -- retrying</span>
+</header>
+
+<main id="stage" aria-live="polite">
+    <p id="stage-label">Latest winner</p>
+
+    <div id="waiting">
+        <p id="waiting-text">Waiting for the first winner...</p>
+    </div>
+
+    <div id="winner" hidden>
+        <h1 id="w-section-row"><span class="tag">Section</span> <span id="w-section"></span></h1>
+        <p id="w-paddle-row"><span class="tag">Paddle</span> <span id="w-paddle"></span></p>
+        <p id="w-name"></p>
+        <p id="w-amount"></p>
+    </div>
+</main>
+
+<footer id="ticker" aria-label="Earlier winners">
+    <div id="track"></div>
+</footer>
+
+<p id="hint">Press F for full screen</p>
+
+<script src="js/winners-feed.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12pt;
+    
+}
+#meaning q {
+    font-style: italic;
+}
+
+.rankbar {
+    background-color: #FFBBBB;
+    width: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.toprank {
+    color: red;
+}
+
+#graph td {
+    vertical-align: bottom;
+    height: 250px;
+}
+
+select, button, input {
+    font-family: inherit;
+    font-size: inherit;
+}

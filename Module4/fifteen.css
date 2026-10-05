@@ -1,0 +1,49 @@
+body {
+	align-content: center;
+	font-size: 14pt;
+  font-family: cursive;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+#puzzlearea {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+  
+}
+
+#puzzlearea > div {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;              
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  font-family: cursive;
+  font-size: 40pt;
+}
+
+p {
+  text-align: center;
+}
+
+#shufflebutton {
+  font-family: cursive;
+  font-size: 14pt;
+
+}
+
+#puzzlearea > div.movable:hover {
+  border-color: red;
+  color: red;
+}
+
+

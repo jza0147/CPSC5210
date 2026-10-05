@@ -1,0 +1,53 @@
+/* Reports page: on-screen tables, printable bid sheets, and print rules. */
+
+#report-controls label { margin-right: 0.25rem; }
+#report-controls span  { margin-left: 1rem; }
+
+#report-output table { border-collapse: collapse; margin: 0.5rem 0 1rem; }
+#report-output th,
+#report-output td    { border: 1px solid #999; padding: 4px 10px; text-align: left; vertical-align: top; }
+#report-output th    { background: #eee; }
+#report-output td.num,
+#report-output th.num { text-align: right; }
+
+#report-output table.summary         { margin-top: 0.25rem; }
+#report-output table.summary th      { background: none; border: none; padding: 2px 12px 2px 0; }
+#report-output table.summary td      { border: none; padding: 2px 0; font-weight: bold; text-align: right; }
+
+.printed { color: #555; font-size: 0.85em; margin: 0 0 0.5rem; }
+
+/* ---- Bid sheets: one card per item on screen, one per page when printed ---- */
+.bid-sheet {
+    border: 2px solid #333;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    max-width: 7.5in;
+    break-after: page;
+    page-break-after: always;
+}
+.bid-sheet h2        { margin: 0 0 0.25rem; }
+.bid-sheet .section-no { font-size: 2.2em; font-weight: bold; margin: 0 0 0.1em; }
+.bid-sheet .meta     { margin: 0.15rem 0; }
+.bid-sheet .start    { font-size: 1.2em; font-weight: bold; margin: 0.5rem 0 0.75rem; }
+
+.bid-sheet table.bid-lines             { width: 100%; border-collapse: collapse; margin: 0; }
+.bid-sheet table.bid-lines th,
+.bid-sheet table.bid-lines td          { border: 1px solid #333; padding: 0 8px; background: none; }
+.bid-sheet table.bid-lines td          { height: 0.42in; }
+
+@media print {
+    .main-nav, #report-controls, #report-status { display: none !important; }
+    .printed { color: #000; }
+    body { margin: 0; }
+    h1 { display: none; }   /* the report has its own title */
+
+    /* Bid sheets: nothing but the sheets, so each one starts at the top of its own page. */
+    #report-output.sheets-layout > h2,
+    #report-output.sheets-layout > .printed { display: none; }
+
+    /* No blank page after the last bid sheet. */
+    .bid-sheet:last-child { break-after: auto; page-break-after: auto; }
+
+    #report-output table { font-size: 10pt; }
+    #report-output tr    { break-inside: avoid; }
+}

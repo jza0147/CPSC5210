@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>ASCIImation</title>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="images/favicon.png">
+		<link href="ascii.css" type="text/css" rel="stylesheet" />
+		<script src = "animations.js" type = "text/javascript"></script>
+        <script src = "ascii.js" type = "text/javascript"></script>
+
+</head>
+
+<body>
+    <h1>
+        ASCII Animation Viewer
+    </h1>
+	
+	<textarea id="datatable" cols="80" rows="20"></textarea>
+	<div id="controls">
+    <fieldset id="playControls">
+		<legend>Play Controls:</legend>
+		  <button id="start" onclick="startPlay();">Start</button> 
+		  <button id="stop" onclick="stopPlay();" disabled>Stop</button> 
+	</fieldset>	
+
+    
+	<fieldset id="animationControls">
+		<legend>Animation:</legend>	
+		<select id = "animation" onchange="selectAnimation();">
+            <option value="Blank" selected>Blank</option>
+			<option value="Exercise">Exercise</option>
+			<option value="Juggler">Juggler</option>
+			<option value="Bike">Bike</option>
+			<option value="Dive">Dive</option>
+		</select>
+	</fieldset>
+
+	<fieldset id="sizeControls">
+		<legend>Size:</legend>
+		<select id ="size" onchange="selectSize();">
+			<option value="7pt">Tiny</option>
+			<option value="10pt">Small</option>
+			<option value="12pt" selected>Medium</option>
+			<option value="16pt">Large</option>
+			<option value="24pt">Extra Large</option>
+			<option value="32pt">XXL</option>
+		</select>
+	</fieldset>
+
+	<fieldset id="speedControl">
+		<legend>Speed:</legend>
+		<input id="speed" type="checkbox" onclick="changeSpeed();"  />
+		<label for="speed">Turbo</label>
+	</fieldset>
+	</div>
+
+</body>
+
+</html>
